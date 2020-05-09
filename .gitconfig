@@ -1,0 +1,12 @@
+[user]
+	name = V Arun Kumar
+	email = arunvkumr@gmail.com
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+	d = diff
+	r = rebase
+	logn = log --graph --oneline -n 10
