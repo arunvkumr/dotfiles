@@ -35,30 +35,21 @@ nnoremap <silent> <leader>- :vertical resize -5<CR>
 autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 nnoremap <silent> <leader>f :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 " CtrlP configs
 nnoremap <silent> <leader>p :CtrlP<CR>
 
+" vim-plug configs
+call plug#begin('~/.vim/plugged')
 
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-   
-call vundle#begin()          " required
+Plug 'VundleVim/Vundle.vim' 
+Plug 'tpope/vim-fugitive'
+Plug 'preservim/nerdtree'
+Plug 'wincent/command-t'
+Plug 'itchyny/lightline.vim'
+Plug 'chriskempson/tomorrow-theme'
+Plug 'kien/ctrlp.vim'
 
-Plugin 'VundleVim/Vundle.vim' 
-Plugin 'tpope/vim-fugitive'
-Plugin 'preservim/nerdtree'
-Plugin 'wincent/command-t'
-Plugin 'itchyny/lightline.vim'
-Plugin 'chriskempson/tomorrow-theme'
-" Plugin 'neoclide/coc.nvim', {'branch': 'release'}
-Plugin 'kien/ctrlp.vim'
-
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-
-
-
-
+call plug#end() 
 
