@@ -79,7 +79,7 @@ let g:gitgutter_set_sign_backgrounds = 1
 highlight clear SignColumn
 highlight SignColumn guibg=black
 highlight SignColumn ctermbg=0
-hi GitGutterAdd             guifg=#e9e9e9 guibg=#006c02 guisp=NONE ctermfg=2 ctermbg=NONE
-hi GitGutterChange          guifg=#000000 guibg=#cbcd04 guisp=NONE ctermfg=3 ctermbg=NONE
-hi GitGutterDelete          guifg=#e9e9e9 guibg=#9b0e05 guisp=NONE ctermfg=1 ctermbg=NONE
-hi GitGutterChangeDelete    guifg=#000000 guibg=#c16f00 guisp=NONE ctermfg=3 ctermbg=NONE
+highlight GitGutterAdd             guifg=#e9e9e9 guibg=#006c02 guisp=NONE ctermfg=2 ctermbg=NONE
+highlight GitGutterChange          guifg=#000000 guibg=#cbcd04 guisp=NONE ctermfg=3 ctermbg=NONE
+highlight GitGutterDelete          guifg=#e9e9e9 guibg=#9b0e05 guisp=NONE ctermfg=1 ctermbg=NONE
+highlight GitGutterChangeDelete    guifg=#000000 guibg=#c16f00 guisp=NONE ctermfg=3 ctermbg=NONE
