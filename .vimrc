@@ -62,7 +62,7 @@ set cmdheight=2
 " NERDTree configs
 " autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-nnoremap <silent> <leader>f :NERDTreeToggle<CR>
+nnoremap <silent> <leader>n :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 " CtrlP configs
