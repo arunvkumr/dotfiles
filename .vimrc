@@ -31,7 +31,6 @@ nnoremap <silent> <leader><c-h> :vertical resize +10<CR>
 nnoremap <silent> <leader><c-l> :vertical resize -10<CR>
 nnoremap <silent> <leader><space> :nohlsearch<CR>
 
-
 " vim-plug configs
 call plug#begin('~/.vim/plugged')
 
@@ -43,6 +42,7 @@ Plug 'wincent/command-t'
 Plug 'itchyny/lightline.vim'
 Plug 'chriskempson/tomorrow-theme'
 Plug 'kien/ctrlp.vim'
+Plug 'ycm-core/YouCompleteMe'
 
 call plug#end() 
 
@@ -64,9 +64,11 @@ set cmdheight=2
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 nnoremap <silent> <leader>n :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.pyc$']
 
 " CtrlP configs
 nnoremap <silent> <leader>p :CtrlP<CR>
+set wildignore=*/.git/*,*/*.pyc
 
 " git-gutter configs
 let g:gitgutter_sign_added = '++'
