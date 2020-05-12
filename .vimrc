@@ -21,16 +21,6 @@ filetype plugin indent on
 " Make backspace work as in most other programs
 set backspace=indent,eol,start
 
-" leader configs
-let mapleader = " "
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
-nnoremap <silent> <leader><c-h> :vertical resize +10<CR>
-nnoremap <silent> <leader><c-l> :vertical resize -10<CR>
-nnoremap <silent> <leader><space> :nohlsearch<CR>
-
 " vim-plug configs
 call plug#begin('~/.vim/plugged')
 
@@ -41,13 +31,25 @@ Plug 'preservim/nerdtree'
 Plug 'wincent/command-t'
 Plug 'itchyny/lightline.vim'
 Plug 'chriskempson/tomorrow-theme'
-Plug 'kien/ctrlp.vim'
-Plug 'ycm-core/YouCompleteMe'
+" Plug 'kien/ctrlp.vim'
+" Plug 'ycm-core/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', {'do': { -> fzf#install()}}
+Plug 'junegunn/fzf.vim'
 
 call plug#end() 
-
 " Colorscheme changes
-let g:gruvbox_termcolors=16
+
+" leader configs
+let mapleader = " "
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
+nnoremap <silent> <leader><c-h> :vertical resize +10<CR>
+nnoremap <silent> <leader><c-l> :vertical resize -10<CR>
+nnoremap <silent> <leader><space> :nohlsearch<CR>
+
 colorscheme gruvbox
 set background=dark
 
@@ -66,9 +68,9 @@ nnoremap <silent> <leader>n :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.pyc$']
 
-" CtrlP configs
-nnoremap <silent> <leader>p :CtrlP<CR>
-set wildignore=*/.git/*,*/*.pyc
+" fzf git-files configs
+nnoremap <silent> <C-p> :Files<CR>
+nnoremap <silent> <leader>p :GFiles<CR>
 
 " git-gutter configs
 let g:gitgutter_sign_added = '++'
