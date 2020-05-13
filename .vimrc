@@ -4,6 +4,7 @@ syntax enable
 
 set hidden
 set noerrorbells
+set novisualbell
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
@@ -14,7 +15,6 @@ set smartcase
 set ignorecase
 set noswapfile
 set nobackup
-set undodir=~/.vim/undodir
 set incsearch
 set hlsearch
 filetype plugin indent on
@@ -32,14 +32,12 @@ Plug 'preservim/nerdtree'
 Plug 'wincent/command-t'
 Plug 'itchyny/lightline.vim'
 Plug 'chriskempson/base16-vim'
-" Plug 'kien/ctrlp.vim'
-" Plug 'ycm-core/YouCompleteMe'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'edkolev/tmuxline.vim'
 
 call plug#end() 
-" Colorscheme changes
 
 " leader configs
 let mapleader = " "
@@ -77,9 +75,10 @@ nnoremap <leader>0 :tablast<CR>
 nnoremap <silent> <leader>p yyp^Cimport pdb; pdb.set_trace() # BREAKPOINT<ESC>
 nnoremap <silent> <leader>P yyP^Cimport pdb; pdb.set_trace() # BREAKPOINT<ESC>
 
-colorscheme base16-tomorrow
+" Colorscheme changes
+colorscheme gruvbox
 set background=dark
-highlight LineNr guifg=None guibg=None ctermfg=None ctermbg=None
+highlight LineNr ctermfg=None ctermbg=None
 
 " Coloumn color changes
 set colorcolumn=80
@@ -87,7 +86,9 @@ highlight ColorColumn ctermbg=7 guibg=lightgrey
 
 " Lightline changes
 set laststatus=2
-set cmdheight=2
+set cmdheight=1
+let g:lightline#extensions#tmuxline#enabled = 1
+let lightline#extensions#tmuxline#snapshot_file = "~/.tmux-status.conf"
 
 " NERDTree configs
 " autocmd vimenter * NERDTree
