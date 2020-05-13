@@ -11,6 +11,7 @@ set autoindent
 set nu rnu
 set nowrap
 set smartcase
+set ignorecase
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
@@ -30,11 +31,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
 Plug 'wincent/command-t'
 Plug 'itchyny/lightline.vim'
-Plug 'chriskempson/tomorrow-theme'
+Plug 'chriskempson/base16-vim'
 " Plug 'kien/ctrlp.vim'
 " Plug 'ycm-core/YouCompleteMe'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf', {'do': { -> fzf#install()}}
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 call plug#end() 
@@ -42,20 +43,47 @@ call plug#end()
 
 " leader configs
 let mapleader = " "
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
-nnoremap <silent> <leader><c-h> :vertical resize +10<CR>
-nnoremap <silent> <leader><c-l> :vertical resize -10<CR>
+nnoremap <silent> <leader>h :wincmd h<CR>
+nnoremap <silent> <leader>j :wincmd j<CR>
+nnoremap <silent> <leader>k :wincmd k<CR>
+nnoremap <silent> <leader>l :wincmd l<CR>
+nnoremap <silent> <c-h> :vertical resize +10<CR>
+nnoremap <silent> <c-j> :resize +10<CR>
+nnoremap <silent> <c-k> :resize -10<CR>
+nnoremap <silent> <c-l> :vertical resize -10<CR>
 nnoremap <silent> <leader><space> :nohlsearch<CR>
 
-colorscheme gruvbox
+" Create splits with leader
+nnoremap <leader>v :vsplit <CR> :wincmd l<CR>
+nnoremap <leader>s :split <CR> :wincmd j<CR>
+
+" List the available buffers and switch if required
+nnoremap <leader>gb :ls<CR>:b
+
+" Switch to available tabs
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+nnoremap <leader>7 7gt
+nnoremap <leader>8 8gt
+nnoremap <leader>8 8gt
+nnoremap <leader>9 9gt
+nnoremap <leader>0 :tablast<CR>
+
+" Insert pdb when pressed p
+nnoremap <silent> <leader>p yyp^Cimport pdb; pdb.set_trace() # BREAKPOINT<ESC>
+nnoremap <silent> <leader>P yyP^Cimport pdb; pdb.set_trace() # BREAKPOINT<ESC>
+
+colorscheme base16-tomorrow
 set background=dark
+highlight LineNr guifg=None guibg=None ctermfg=None ctermbg=None
 
 " Coloumn color changes
 set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+highlight ColorColumn ctermbg=7 guibg=lightgrey
 
 " Lightline changes
 set laststatus=2
@@ -70,7 +98,6 @@ let NERDTreeIgnore=['\.pyc$']
 
 " fzf git-files configs
 nnoremap <silent> <C-p> :Files<CR>
-nnoremap <silent> <leader>p :GFiles<CR>
 
 " git-gutter configs
 let g:gitgutter_sign_added = '++'
