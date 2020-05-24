@@ -1,18 +1,20 @@
 syntax on
-filetype plugin indent on
 syntax enable
 
+set ruler
+set showcmd
 set hidden
 set noerrorbells
 set novisualbell
-set tabstop=4 softtabstop=4
+set tabstop=4 
+set softtabstop=4
+set textwidth=120
 set shiftwidth=4
 set expandtab
 set autoindent
 set nu rnu
 set nowrap
 set smartcase
-set ignorecase
 set noswapfile
 set nobackup
 set incsearch
@@ -29,15 +31,16 @@ Plug 'airblade/vim-gitgutter'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
-Plug 'wincent/command-t'
-Plug 'itchyny/lightline.vim'
-Plug 'chriskempson/base16-vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'edkolev/tmuxline.vim'
 
 call plug#end() 
+
+" Airline Configs
+let g:airline_theme='base16_gruvbox_dark_hard'
 
 " leader configs
 let mapleader = " "
@@ -73,16 +76,14 @@ nnoremap <leader>0 :tablast<CR>
 
 " Insert pdb when pressed p
 nnoremap <silent> <leader>p yyp^Cimport pdb; pdb.set_trace() # BREAKPOINT<ESC>
-nnoremap <silent> <leader>P yyP^Cimport pdb; pdb.set_trace() # BREAKPOINT<ESC>
 
 " Colorscheme changes
 colorscheme gruvbox
 set background=dark
-highlight LineNr ctermfg=None ctermbg=None
 
 " Coloumn color changes
 set colorcolumn=80
-highlight ColorColumn ctermbg=7 guibg=lightgrey
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " Lightline changes
 set laststatus=2
