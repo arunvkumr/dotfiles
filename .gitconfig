@@ -4,9 +4,40 @@
 [alias]
 	co = checkout
 	br = branch
-	ci = commit
-	st = status
-	unstage = reset HEAD --
+	st = status -sb
+	cm = commit
+	us = reset HEAD --
+    ll = log --date=short --pretty=\"format:%C(blue)%ad %C(yellow)%h%C(green)%d%Creset %s %C(magenta) [%an]%Creset\" 
+    l = log -n 10 --date=short --pretty=\"format:%C(blue)%ad %C(yellow)%h%C(green)%d%Creset %s %C(magenta) [%an]%Creset\" 
 	d = diff
 	r = rebase
-	logn = log --graph --oneline -n 10
+    pend = cherry -v origin/master --abbrev=10
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color]
+	ui = true
+    status = always
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[core]
+	editor = vim
+	whitespace = fix,-indent-with-no-tab,trailing-space,ct-at-eol
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[diff-so-fancy]
+	stripLeadingSymbols = false
+	useUnicodeRuler = false
+	rulerWidth = 50

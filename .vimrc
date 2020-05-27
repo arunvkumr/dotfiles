@@ -1,3 +1,7 @@
+" Mapping Caps to Esc, for faster navigation
+autocmd VimEnter * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+autocmd VimLeave * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+
 syntax on
 syntax enable
 
@@ -59,7 +63,8 @@ nnoremap <leader>v :vsplit <CR> :wincmd l<CR>
 nnoremap <leader>s :split <CR> :wincmd j<CR>
 
 " List the available buffers and switch if required
-nnoremap <leader>gb :ls<CR>:b
+" nnoremap <leader>gb :ls<CR>:b
+nnoremap <leader>b :Buffers<CR>
 
 " Switch to available tabs
 nnoremap <leader>1 1gt
