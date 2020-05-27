@@ -80,7 +80,7 @@ nnoremap <leader>9 9gt
 nnoremap <leader>0 :tablast<CR>
 
 " Insert pdb when pressed p
-nnoremap <silent> <leader>p yyp^Cimport pdb; pdb.set_trace() # BREAKPOINT<ESC>
+nnoremap <silent> <leader>p yyP^Cimport pdb; pdb.set_trace() # BREAKPOINT<ESC>
 
 " Colorscheme changes
 colorscheme gruvbox
