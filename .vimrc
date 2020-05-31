@@ -32,7 +32,7 @@ set backspace=indent,eol,start
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
@@ -40,6 +40,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'edkolev/tmuxline.vim'
+Plug 'davidhalter/jedi-vim'
 
 call plug#end() 
 
