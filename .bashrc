@@ -95,6 +95,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias s='source ~/.bashrc'
+alias vi='nvim'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

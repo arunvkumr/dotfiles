@@ -41,8 +41,11 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'davidhalter/jedi-vim'
+Plug 'ThePrimeagen/vim-be-good'
 
 call plug#end() 
+
+autocmd FileType python call jedi#configure_call_signatures()
 
 " Airline Configs
 let g:airline_theme='base16_gruvbox_dark_hard'
